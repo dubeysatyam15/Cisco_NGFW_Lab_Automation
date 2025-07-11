@@ -18,3 +18,7 @@ During my internship, we identified that customers spent significant time manual
 - Saves time and improves consistency across lab environments  
 
 ---
+
+## 🖼️ System Architecture
+
+![System Architecture](assets/system_architecture.jpg)
