@@ -1,0 +1,127 @@
+================================
+Block Unacceptable Sites
+--------------------------------
+
+{
+  "action": "BLOCK_RESET",
+  "enabled": true,
+  "type": "AccessRule",
+  "name": "Block Unacceptable Sites",
+  "logBegin": true,
+  "logEnd": false,
+  "sendEventsToFMC": true,
+  "variableSet": {
+    "name": "Default Set",
+    "id": "76fa83ea-c972-11e2-8be8-8e45bb1343c0",
+    "type": "VariableSet"
+  },
+  "logFiles": false,
+  "urls": {
+    "urlCategoriesWithReputation": [
+      {
+        "type": "UrlCategoryAndReputation",
+        "category": {
+          "name": "Phishing and Other Frauds",
+          "id": "a774acd8-8240-11e0-9682-6814b504fd57",
+          "type": "URLCategory"
+        }
+      },
+      {
+        "type": "UrlCategoryAndReputation",
+        "category": {
+          "name": "Adult and Pornography",
+          "id": "a774acd8-8240-11e0-9682-6814b504fd11",
+          "type": "URLCategory"
+        }
+      },
+      {
+        "type": "UrlCategoryAndReputation",
+        "category": {
+          "name": "Gambling",
+          "id": "a774acd8-8240-11e0-9682-6814b504fd27",
+          "type": "URLCategory"
+        }
+      }
+    ]
+  }
+}
+
+
+
+================================
+Log SSH Traffic on Any Port
+--------------------------------
+
+{
+  "action": "ALLOW",
+  "enabled": true,
+  "type": "AccessRule",
+  "name": "Log SSH Traffic",
+  "logBegin": true,
+  "logEnd": true,
+  "sendEventsToFMC": true,
+  "variableSet": {
+    "name": "Default Set",
+    "id": "76fa83ea-c972-11e2-8be8-8e45bb1343c0",
+    "type": "VariableSet"
+  },
+  "logFiles": false,
+  "applications": {
+    "applications": [
+      {
+        "id": "771",
+        "type": "Application",
+        "name": "OpenSSH"
+      },
+      {
+        "id": "846",
+        "type": "Application",
+        "name": "SSH"
+      }
+    ]
+  }
+}
+
+
+================================
+Block SSH Traffic on Port 53
+--------------------------------
+
+{
+  "action": "BLOCK_RESET",
+  "enabled": true,
+  "type": "AccessRule",
+  "name": "Block SSH on Port 53",
+  "logBegin": true,
+  "logEnd": false,
+  "sendEventsToFMC": true,
+  "variableSet": {
+    "name": "Default Set",
+    "id": "76fa83ea-c972-11e2-8be8-8e45bb1343c0",
+    "type": "VariableSet"
+  },
+  "logFiles": false,
+  "destinationPorts": {
+    "objects": [
+      {
+        "type": "ProtocolPortObject",
+        "name": "DNS_over_TCP",
+        "id": "1834e712-38bb-11e2-86aa-62f0c593a59a"
+      }
+    ]
+  },
+  "applications": {
+    "applications": [
+      {
+        "id": "771",
+        "type": "Application",
+        "name": "OpenSSH"
+      },
+      {
+        "id": "846",
+        "type": "Application",
+        "name": "SSH"
+      }
+    ]
+  }
+}
