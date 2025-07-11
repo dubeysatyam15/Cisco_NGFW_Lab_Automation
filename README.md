@@ -21,4 +21,4 @@ During my internship, we identified that customers spent significant time manual
 
 ## 🖼️ System Architecture
 
-![System Architecture](assets/system_architecture.jpg)
+![System Architecture](https://github.com/dubeysatyam15/Cisco_NGFW_Lab_Automation/blob/main/System_Architecture.jpg)
